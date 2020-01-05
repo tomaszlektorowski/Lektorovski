@@ -1,0 +1,19 @@
+.text{
+    &__color{
+        &--main{
+            color: $text-color-main;
+        }
+        &--alt{
+            color: $text-color-alt;
+        }
+    }
+
+    &__align{
+        &--right{
+            text-align: right;
+        }
+        &--center{
+            text-align: center;
+        }
+    }
+}

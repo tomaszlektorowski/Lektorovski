@@ -1,2 +1,13 @@
-@import "base/reset.scss";
-@import "base/typography.scss"
+@import "utils/variables";
+@import "utils/mixins";
+@import "utils/utilities";
+
+@import "base/page";
+@import "base/reset";
+@import "base/typography";
+
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/footer";
+
+@import "pages/home";

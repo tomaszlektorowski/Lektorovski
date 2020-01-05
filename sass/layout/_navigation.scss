@@ -1,0 +1,10 @@
+.nav{
+    position: static;
+    &__toggler{
+        display: none;
+    }
+    &__list{
+        list-style: none;
+        display: flex;
+    }
+}
