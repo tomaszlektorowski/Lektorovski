@@ -1,0 +1,13 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+@font-face {
+  font-family: 'OpenSans';
+  src: url("../font/OpenSans-Regular.ttf"); }
+
+body {
+  font-size: 100%;
+  line-height: 1.25em;
+  font-family: 'OpenSans'; }
