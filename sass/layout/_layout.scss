@@ -1,0 +1,31 @@
+.container{
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+section{
+    padding: 20vw 10vw;
+}
+
+img{
+    width: 100%;
+    height: auto;
+}
+
+.row{
+    display: flex;
+    flex-direction: column;
+    &__2cols{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: $grid-gap*1px;
+    }
+    @media screen and (max-width:980px) {
+        &__2cols{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

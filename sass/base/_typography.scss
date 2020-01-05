@@ -8,7 +8,7 @@
     font-size: 100%;
     font-weight: 400;
     line-height: 1.25em;
-    color:$text-color-main;
+    color:$text-color-main-dark;
   }
 
   a{
@@ -22,8 +22,22 @@
   .heading{
       &__h1{
           font-size: 7.2rem;
-          line-height: 1.25em;
           font-weight: 700;
+          line-height: 1.25em;
+          
       }
+      &__h2{
+        color: $text-color-alt;
+        font-size: 4.8rem;
+        font-weight: 700;
+        line-height: 1.25em;
+    }
+  }
+
+  .paragraph{
+    padding-top: 1em;
+    text-transform: uppercase;
+    line-height: 2em;
+    padding-bottom: 1em;
   }
 

@@ -1,10 +1,30 @@
-.nav{
-    position: static;
-    &__toggler{
+.nav {
+    @include defaultTransition;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    z-index: 9999999;
+    overflow: hidden;
+
+    &__toggler {
         display: none;
     }
-    &__list{
+
+    &__list {
+        padding: 0 10%;
         list-style: none;
         display: flex;
+
+        &--item {
+            padding: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+    }
+
+    &__scrolled {
+      background-color: rgba($bg-color-main,0.75);
     }
 }

@@ -1,7 +1,7 @@
-.header{
-    &__home{
+.header {
+    &__home {
         position: relative;
-        background-image:  linear-gradient(135deg, rgba($bg-color-alt,0.9),rgba($bg-color-main,0.9)), url('../img/bg__header-home.jpg');
+        background-image: linear-gradient(135deg, rgba($bg-color-alt, 0.9), rgba($bg-color-main, 0.9)), url('../img/bg__header-home.jpg');
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
@@ -9,7 +9,8 @@
         width: 100vw;
         height: 100vh;
     }
-    .wrapper{
+
+    .wrapper {
         position: absolute;
         bottom: 5vh;
         right: 5vw;
@@ -19,8 +20,8 @@
         margin-right: auto;
     }
 
-    .widget__readmore{
-        transition: all 0.3s ease-in-out;
+    .widget__readmore {
+        @include defaultTransition;
         transform: rotate(270deg);
         position: absolute;
         left: 50px;
@@ -28,40 +29,96 @@
         text-transform: uppercase;
         font-weight: 700;
         font-weight: 3.6rem;
-        &:after,&:before{
+
+        &:after,
+        &:before {
             position: absolute;
             content: '';
             width: 100%;
             height: 100%;
             left: 60%;
+            border-left: 2px solid $text-color-main;
         }
-        &:after{
-            transition: all 0.3s ease-in-out;
+
+        &:after {
+            @include defaultTransition;
             top: -1.5em;
             border-bottom: 2px solid $text-color-main;
-            border-left: 2px solid $text-color-main;
             transform: skewX(-60deg) translateX(-50%);
-            &:hover{
+
+            &:hover {
                 transform: skewX(-60deg) translateX(-60%);
             }
         }
-        &:before{
-            transition: all 0.3s ease-in-out;
+
+        &:before {
+            @include defaultTransition;
             top: 1.5em;
             border-top: 2px solid $text-color-main;
-            border-left: 2px solid $text-color-main;
             transform: skewX(60deg) translateX(-50%);
-            &:hover{
+
+            &:hover {
                 transform: skewX(60deg) translateX(-60%);
             }
         }
-        &:hover{
+
+        &:hover {
             transform: rotate(270deg) translateX(10px);
-            &:after{
+            color: $color-green;
+
+            &:after,
+            &:before {
+                border-color: $color-green;
+            }
+
+            &:after {
+
                 transform: skewX(-60deg) translateX(-65%);
             }
-            &:before{
+
+            &:before {
                 transform: skewX(60deg) translateX(-65%);
+            }
+        }
+    }
+}
+
+.section {
+    &__about {
+        .col:nth-child(1) {
+            transform: translateY(-50px);
+            display: flex;
+            align-items: center;
+        }
+
+        .col-skewed {
+            padding-left: 60px;
+            padding-right: 60px;
+            padding-bottom: 60px;
+            background-color: $color-white;
+            transform: skewX(-15deg);
+            box-shadow: -10px 10px 20px $color-shadow;
+            * {
+                transform: translateY(50px) skewX(15deg);
+            }
+        }
+
+        @media screen and (max-width:980px) {
+            .col:nth-child(1) {
+                display: none;
+            }
+            .col-skewed {
+                background-image: linear-gradient(0deg,rgba(255,255,255,0.7),rgba(255,255,255,0.7)),url("../img/lektorowski.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+                padding: 60px;
+                transform: skewX(0);
+
+                * {
+                    transform: translateY(0px) skewX(0);
+                }
+
             }
         }
     }
