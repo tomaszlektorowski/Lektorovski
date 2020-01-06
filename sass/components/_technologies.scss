@@ -1,19 +1,23 @@
-.technologies{
-    &__wrapper{
+.technologies {
+    &__wrapper {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
-        @media screen and (max-width:1200px){
+
+        @media screen and (max-width:1200px) {
             grid-template-columns: repeat(3, 1fr);
         }
-        @media screen and (max-width:980px){
+
+        @media screen and (max-width:980px) {
             grid-template-columns: repeat(2, 1fr);
         }
-        @media screen and (max-width:780px){
+
+        @media screen and (max-width:780px) {
             grid-template-columns: repeat(1, 1fr);
         }
     }
-    &__item{
+
+    &__item {
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -21,11 +25,15 @@
         perspective: 150rem;
         -moz-perspective: 150rem;
         position: relative;
-        min-height: 300px;
+        min-height: 400px;
+        z-index: 999;
+        &--text{
+            text-align: center;
+        }
 
 
-        
-        &--back,&--front{
+        &--back,
+        &--front {
             @include defaultTransition;
             position: absolute;
             top: 0;
@@ -35,32 +43,34 @@
             display: flex;
             flex-direction: column;
             justify-content: space-around;
-            align-items: center;            
+            align-items: center;
             -webkit-backface-visibility: hidden;
             border-radius: 5px;
             padding: 20px;
             box-sizing: border-box;
         }
 
-        &--front{
-            background-color: rgba($color-shadow,0.3);
-            border:2px solid rgba($color-shadow,0.6)
+        &--front {
+            background-color: rgba($color-shadow, 0.3);
+            border: 2px solid rgba($color-shadow, 0.6)
         }
 
-        &--back{
-            background-color: rgba($color-white,0.3);
+        &--back {
+            background-color: rgba($color-white, 0.3);
             visibility: hidden;
             transform: rotateY(180deg);
         }
 
-        &:hover &--front{
+        &--front.technologies__item--front--active, &:hover &--front {
             transform: rotateY(-180deg);
+            z-index: 99;
         }
 
-        &:hover &--back{
+        &--back.technologies__item--back--active, &:hover &--back {
             visibility: visible;
             transition: all .75s ease;
             transform: rotateY(0);
+            z-index: 99;
         }
 
     }
