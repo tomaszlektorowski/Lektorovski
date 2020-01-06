@@ -1,10 +1,16 @@
 .text{
     &__color{
-        &--main{
-            color: $text-color-main;
+        &--main-dark{
+            color: $text-color-main-dark !important;
         }
-        &--alt{
-            color: $text-color-alt;
+        &--alt-dark{
+            color: $text-color-alt-dark !important;
+        }
+        &--main-light{
+            color: $text-color-main-light !important;
+        }
+        &--alt-light{
+            color: $text-color-alt-light !important;
         }
     }
 
@@ -14,6 +20,20 @@
         }
         &--center{
             text-align: center;
+        }
+    }
+}
+
+.margin{
+    &__bottom{
+        &--big{
+            margin-bottom: 2em;
+        }
+    }
+
+    &__top{
+        &--medium{
+            margin-top: 0.75em;
         }
     }
 }

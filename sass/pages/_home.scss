@@ -2,10 +2,8 @@
     &__home {
         position: relative;
         background-image: linear-gradient(135deg, rgba($bg-color-alt, 0.9), rgba($bg-color-main, 0.9)), url('../img/bg__header-home.jpg');
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
         background-attachment: fixed;
+        @include defaultBackground;
         width: 100vw;
         height: 100vh;
     }
@@ -37,13 +35,13 @@
             width: 100%;
             height: 100%;
             left: 60%;
-            border-left: 2px solid $text-color-main;
+            border-left: 2px solid $text-color-main-light;
         }
 
         &:after {
             @include defaultTransition;
             top: -1.5em;
-            border-bottom: 2px solid $text-color-main;
+            border-bottom: 2px solid $text-color-main-light;
             transform: skewX(-60deg) translateX(-50%);
 
             &:hover {
@@ -54,7 +52,7 @@
         &:before {
             @include defaultTransition;
             top: 1.5em;
-            border-top: 2px solid $text-color-main;
+            border-top: 2px solid $text-color-main-light;
             transform: skewX(60deg) translateX(-50%);
 
             &:hover {
@@ -92,14 +90,29 @@
         }
 
         .col-skewed {
+            position: relative;
             padding-left: 60px;
             padding-right: 60px;
             padding-bottom: 60px;
             background-color: $color-white;
             transform: skewX(-15deg);
-            box-shadow: -10px 10px 20px $color-shadow;
+            box-shadow: 0px 15px 10px $color-shadow;
+            z-index: 99;
             * {
                 transform: translateY(50px) skewX(15deg);
+            }
+            &::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                border: 3px solid $text-color-alt-light;
+                border-radius: 5px;
+                transform: translate(-20px, -20px);
+                z-index: 9;
+                box-shadow: 0px 5px 10px $color-shadow;
             }
         }
 
@@ -118,8 +131,23 @@
                 * {
                     transform: translateY(0px) skewX(0);
                 }
+                &::after{
+                    content: none;
+                }
 
             }
+        }
+    }
+
+    &__technologies{
+        background-image: linear-gradient(60deg, rgba($color-shadow, 0.75), rgba($color-shadow, 0.5)), url('../img/bg-technology.jpg');
+        background-attachment: fixed;
+        @include defaultBackground;
+        .row{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         }
     }
 }

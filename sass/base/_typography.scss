@@ -5,33 +5,37 @@
 
   body{
     font-family: 'OpenSans';
-    font-size: 100%;
-    font-weight: 400;
-    line-height: 1.25em;
-    color:$text-color-main-dark;
+    @include defaultFont;
   }
 
   a{
-    font-size: 100%;
-    font-weight: 400;
-    line-height: 1.25em;
-    color:$text-color-main;
+    @include defaultFont;
     text-decoration: none;
   }
 
   .heading{
+    line-height: 1.25em;
       &__h1{
           font-size: 7.2rem;
-          font-weight: 700;
-          line-height: 1.25em;
-          
+          @media screen and (max-width:980px){
+            font-size: 6rem;
+          }
+          @media screen and (max-width:768px){
+            font-size: 4.8rem;
+          }
       }
       &__h2{
-        color: $text-color-alt;
+        color: $text-color-alt-dark;
         font-size: 4.8rem;
-        font-weight: 700;
-        line-height: 1.25em;
     }
+    &__h3{
+      font-size: 3.6rem;
+  }
+  }
+
+  .fab{
+    color: $text-color-main-light;
+    font-size: 7.2rem;
   }
 
   .paragraph{

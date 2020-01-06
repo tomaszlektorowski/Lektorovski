@@ -1,3 +1,16 @@
 @mixin defaultTransition {
     transition: all 0.3s ease-in-out;
 }
+
+@mixin defaultBackground {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@mixin defaultFont{
+    font-size: 100%;
+    font-weight: 700;
+    line-height: 1.25em;
+    color:$text-color-main-dark;
+}
