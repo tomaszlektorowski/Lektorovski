@@ -104,8 +104,20 @@ a {
   .heading__h2 {
     color: #720675;
     font-size: 4.8rem; }
+    @media screen and (max-width: 980px) {
+      .heading__h2 {
+        font-size: 3.6rem; } }
+    @media screen and (max-width: 768px) {
+      .heading__h2 {
+        font-size: 2.4rem; } }
   .heading__h3 {
     font-size: 3.6rem; }
+    @media screen and (max-width: 980px) {
+      .heading__h3 {
+        font-size: 2.4rem; } }
+    @media screen and (max-width: 768px) {
+      .heading__h3 {
+        font-size: 1.2rem; } }
 
 .fab {
   color: #dbdce2;
@@ -330,9 +342,9 @@ img {
     background-color: rgba(248, 248, 248, 0.3);
     visibility: hidden;
     transform: rotateY(180deg); }
-  .technologies__item:focus .technologies__item--front, .technologies__item:active .technologies__item--front {
+  .technologies__item:hover .technologies__item--front {
     transform: rotateY(-180deg); }
-  .technologies__item:focus .technologies__item--back, .technologies__item:active .technologies__item--back {
+  .technologies__item:hover .technologies__item--back {
     visibility: visible;
     transition: all .75s ease;
     transform: rotateY(0); }

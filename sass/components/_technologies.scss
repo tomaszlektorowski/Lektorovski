@@ -53,11 +53,11 @@
             transform: rotateY(180deg);
         }
 
-        &:focus &--front, &:active &--front{
+        &:hover &--front{
             transform: rotateY(-180deg);
         }
 
-        &:focus &--back, &:active &--back{
+        &:hover &--back{
             visibility: visible;
             transition: all .75s ease;
             transform: rotateY(0);
