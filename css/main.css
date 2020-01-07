@@ -94,34 +94,34 @@ a {
 .heading {
   line-height: 1.25em; }
   .heading__h1 {
-    font-size: 7.2rem; }
-    @media screen and (max-width: 980px) {
-      .heading__h1 {
-        font-size: 6rem; } }
-    @media screen and (max-width: 768px) {
-      .heading__h1 {
-        font-size: 4.8rem; } }
-  .heading__h2 {
-    color: #720675;
     font-size: 4.8rem; }
     @media screen and (max-width: 980px) {
-      .heading__h2 {
+      .heading__h1 {
         font-size: 3.6rem; } }
     @media screen and (max-width: 768px) {
+      .heading__h1 {
+        font-size: 2.4rem; } }
+  .heading__h2 {
+    color: #720675;
+    font-size: 3.6rem; }
+    @media screen and (max-width: 980px) {
       .heading__h2 {
         font-size: 2.4rem; } }
+    @media screen and (max-width: 768px) {
+      .heading__h2 {
+        font-size: 1.8rem; } }
   .heading__h3 {
-    font-size: 2.4rem; }
+    font-size: 1.6rem; }
     @media screen and (max-width: 980px) {
       .heading__h3 {
-        font-size: 2rem; } }
+        font-size: 1.4rem; } }
     @media screen and (max-width: 768px) {
       .heading__h3 {
-        font-size: 1.6rem; } }
+        font-size: 1.2rem; } }
 
 .fab, .fas {
   color: #dbdce2;
-  font-size: 7.2rem; }
+  font-size: 4.8rem; }
 
 .paragraph {
   padding-top: 1em;
@@ -139,7 +139,7 @@ a {
   max-width: none; }
 
 section {
-  padding: 200px 10vw; }
+  padding: 100px 10vw; }
 
 img {
   width: 100%;
@@ -414,14 +414,14 @@ footer {
 
 .technologies__wrapper {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 30px; }
   @media screen and (max-width: 1200px) {
     .technologies__wrapper {
-      grid-template-columns: repeat(3, 1fr); } }
+      grid-template-columns: repeat(2, 1fr); } }
   @media screen and (max-width: 980px) {
     .technologies__wrapper {
-      grid-template-columns: repeat(2, 1fr); } }
+      grid-template-columns: repeat(1, 1fr); } }
   @media screen and (max-width: 780px) {
     .technologies__wrapper {
       grid-template-columns: repeat(1, 1fr); } }
@@ -434,10 +434,14 @@ footer {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  min-height: 400px;
+  min-height: 250px;
   z-index: 999; }
+  @media screen and (max-width: 980px) {
+    .technologies__item {
+      min-height: 150px; } }
   .technologies__item--text {
-    text-align: center; }
+    text-align: center;
+    font-size: 0.75rem; }
   .technologies__item--back, .technologies__item--front {
     transition: all 0.3s ease-in-out;
     position: absolute;
