@@ -3,17 +3,20 @@
     position: fixed;
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     height: auto;
     z-index: 9999999;
 
 
     &__toggler {
+        @include defaultTransition;
+        cursor: pointer;
+        &:hover{
+            background-color: $color-green;
+        }
         @media screen and (min-width:980px){
             display: none;
-        }
-        *{
-            @include defaultTransition;
         }
         position: fixed;
         top: 30px;
@@ -25,6 +28,15 @@
         border-radius: 100%;
 
         &--active{
+            &:hover{
+                background-color: red;
+                .nav__togler--icon,.nav__toggler--icon:before,.nav__toggler--icon:after{
+                    background-color: $color-white;
+                }
+                .nav__toggler--icon{
+                    color: transparent;
+                }
+            }
             z-index: 999999;
             .nav__toggler--icon{
                 transform: translateY(-4px);
@@ -94,21 +106,29 @@
 
 
     &__list {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 1em 0;
         @media screen and (max-width:980px){
             display: none;
         }
-        padding: 0 10%;
-        list-style: none;
+        
 
         &--item {
+            @include defaultTransition;
+            position: relative;
             font-size: 2rem;
             padding: 10px;
             font-weight: 700;
             text-transform: uppercase;
+            &:hover{
+                color: $color-green !important;
+            }
         }
     }
 
     &__scrolled {
-        background-color: rgba($bg-color-main, 0.75);
+        background-color: rgba($bg-color-main, 0.9);
     }
 }

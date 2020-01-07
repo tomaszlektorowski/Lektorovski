@@ -165,10 +165,13 @@ img {
   position: fixed;
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: auto;
   z-index: 9999999; }
   .nav__toggler {
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
     position: fixed;
     top: 30px;
     right: 30px;
@@ -177,13 +180,19 @@ img {
     border: none;
     box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
     border-radius: 100%; }
+    .nav__toggler:hover {
+      background-color: #00da00; }
     @media screen and (min-width: 980px) {
       .nav__toggler {
         display: none; } }
-    .nav__toggler * {
-      transition: all 0.3s ease-in-out; }
     .nav__toggler--active {
       z-index: 999999; }
+      .nav__toggler--active:hover {
+        background-color: red; }
+        .nav__toggler--active:hover .nav__togler--icon, .nav__toggler--active:hover .nav__toggler--icon:before, .nav__toggler--active:hover .nav__toggler--icon:after {
+          background-color: #f8f8f8; }
+        .nav__toggler--active:hover .nav__toggler--icon {
+          color: transparent; }
       .nav__toggler--active .nav__toggler--icon {
         transform: translateY(-4px);
         background-color: transparent; }
@@ -231,18 +240,24 @@ img {
       .nav__toggler--icon::after {
         top: -1em; }
   .nav__list {
-    padding: 0 10%;
-    list-style: none; }
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 1em 0; }
     @media screen and (max-width: 980px) {
       .nav__list {
         display: none; } }
     .nav__list--item {
+      transition: all 0.3s ease-in-out;
+      position: relative;
       font-size: 2rem;
       padding: 10px;
       font-weight: 700;
       text-transform: uppercase; }
+      .nav__list--item:hover {
+        color: #00da00 !important; }
   .nav__scrolled {
-    background-color: rgba(25, 44, 149, 0.75); }
+    background-color: rgba(25, 44, 149, 0.9); }
 
 footer {
   position: relative;
