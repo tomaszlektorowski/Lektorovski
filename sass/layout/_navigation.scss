@@ -4,20 +4,104 @@
     display: flex;
     align-items: center;
     width: 100%;
-    height: 60px;
+    height: auto;
     z-index: 9999999;
-    overflow: hidden;
+
 
     &__toggler {
-        display: none;
+        @media screen and (min-width:980px){
+            display: none;
+        }
+        *{
+            @include defaultTransition;
+        }
+        position: fixed;
+        top: 30px;
+        right: 30px;
+        height: 60px;
+        width: 60px;
+        border: none;
+        box-shadow: 0px 5px 5px rgba($color: $color-shadow, $alpha: 0.5);
+        border-radius: 100%;
+
+        &--active{
+            z-index: 999999;
+            .nav__toggler--icon{
+                transform: translateY(-4px);
+                background-color: transparent;
+            }
+                .nav__toggler--icon:before{
+                    background-color: red;
+                    top: 0;
+                    transform: rotate(135deg);
+                }
+                .nav__toggler--icon:after{
+                    background-color: red;
+                    top: 0;
+                    transform: rotate(-135deg);
+                }
+            & + .nav__list{
+                @media screen and (max-width:980px){
+                    opacity: 1;
+                }
+                padding: 0;
+                position: absolute;
+                background-image: linear-gradient(135deg, rgba($bg-color-alt, 1), rgba($bg-color-main, 1));
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                z-index: 99999;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+
+        &--icon {
+            height: 3px;
+            width: 30px;
+            position: relative;
+            &,
+            &::before,
+            &::after {
+                opacity: 1;
+                height: 3px;
+                width: 30px;
+                background-color: $color-black;
+                display: inline-block;
+            }
+
+            &::before,
+            &::after {
+                content: '';
+                position: absolute;
+                left: 0;
+                @include defaultTransition;
+            }
+
+            &::before {
+                top: -0.5em;
+            }
+
+            &::after {
+                top: -1em;
+            }
+        }
+
     }
 
+
     &__list {
+        @media screen and (max-width:980px){
+            display: none;
+        }
         padding: 0 10%;
         list-style: none;
-        display: flex;
 
         &--item {
+            font-size: 2rem;
             padding: 10px;
             font-weight: 700;
             text-transform: uppercase;
@@ -25,6 +109,6 @@
     }
 
     &__scrolled {
-      background-color: rgba($bg-color-main,0.75);
+        background-color: rgba($bg-color-main, 0.75);
     }
 }

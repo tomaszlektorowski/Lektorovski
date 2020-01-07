@@ -1,0 +1,18 @@
+.button{
+    &:link,&:visited{
+        @include defaultTransition;
+        text-decoration: none;
+        padding: 0.5em 1em;
+        font-size: 1em;
+        background-color: $bg-color-main;
+        color: $text-color-main-light;
+        border:2px solid transparent;
+        border-radius: 5px;
+    }
+
+    &:hover,&:active{
+        background-color: transparent;
+        border-color: $text-color-main-dark;
+        color: $text-color-main-dark;
+    }
+}
