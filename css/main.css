@@ -170,6 +170,7 @@ img {
   height: auto;
   z-index: 9999999; }
   .nav__toggler {
+    outline: none;
     transition: all 0.3s ease-in-out;
     cursor: pointer;
     position: fixed;
@@ -468,7 +469,7 @@ footer {
 .portfolio__wrapper {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px; }
+  gap: 40px; }
   @media screen and (max-width: 1200px) {
     .portfolio__wrapper {
       grid-template-columns: repeat(2, 1fr); } }
@@ -526,6 +527,8 @@ footer {
     transition: all .75s ease;
     transform: rotateY(0);
     z-index: 99; }
+  .portfolio__item:not(:last-child) {
+    margin-bottom: 30px; }
 
 .button:link, .button:visited {
   transition: all 0.3s ease-in-out;

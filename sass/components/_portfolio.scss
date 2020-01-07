@@ -2,7 +2,7 @@
     &__wrapper {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 30px;
+        gap: $grid-gap*1px;
 
         @media screen and (max-width:1200px) {
             grid-template-columns: repeat(2, 1fr);
@@ -75,6 +75,9 @@
             transition: all .75s ease;
             transform: rotateY(0);
             z-index: 99;
+        }
+        &:not(:last-child){
+            margin-bottom: 30px;
         }
 
     }
