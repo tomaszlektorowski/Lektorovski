@@ -4,7 +4,9 @@ footer {
     background-attachment: fixed;
     @include defaultBackground;
     padding: 300px 10vw;
-
+@media screen and (max-width:980px){
+    padding: 100px 5vw;
+}
     .copyright {
         max-width: 300px;
         position: absolute;

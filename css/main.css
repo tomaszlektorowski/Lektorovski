@@ -268,6 +268,9 @@ footer {
   background-repeat: no-repeat;
   background-position: center;
   padding: 300px 10vw; }
+  @media screen and (max-width: 980px) {
+    footer {
+      padding: 100px 5vw; } }
   footer .copyright {
     max-width: 300px;
     position: absolute;
@@ -388,7 +391,7 @@ footer {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    padding: 60px;
+    padding: 10px;
     transform: skewX(0); }
     .section__about .col-skewed * {
       transform: translateY(0px) skewX(0); }
@@ -487,6 +490,7 @@ footer {
 
 .portfolio__item {
   max-width: 500px;
+  min-height: 400px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -494,10 +498,13 @@ footer {
   perspective: 150rem;
   -moz-perspective: 150rem;
   position: relative;
-  min-height: 400px;
+  margin-bottom: 30px;
   z-index: 999; }
   .portfolio__item--text {
     text-align: center; }
+  @media screen and (max-width: 980px) {
+    .portfolio__item {
+      max-width: 100%; } }
   .portfolio__item--back, .portfolio__item--front {
     transition: all 0.3s ease-in-out;
     position: absolute;
@@ -527,8 +534,6 @@ footer {
     transition: all .75s ease;
     transform: rotateY(0);
     z-index: 99; }
-  .portfolio__item:not(:last-child) {
-    margin-bottom: 30px; }
 
 .button:link, .button:visited {
   transition: all 0.3s ease-in-out;
